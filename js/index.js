@@ -1,56 +1,54 @@
-//Defini una función para calcular el resultado de la operación
+// Array de productos con sus IDs y precios
+var productos = [
+    { id: "producto1", nombre: "Camiseta", precio: 7000 },
+    { id: "producto2", nombre: "Zapatos", precio: 47000 },
+    { id: "producto3", nombre: "Pantalones", precio: 15000 }
+];
 
-function calcular(num1, operador, num2) {
-    num1 = parseFloat(num1); // Convertimos el primer número a decimal
-    num2 = parseFloat(num2); // Convertimos el segundo número a decimal
+// Array para almacenar los productos seleccionados
+var carrito = [];
+var totalCompra = 0;
 
-    // Utilice un switch para manejar diferentes operadores
+// Función para mostrar la lista de productos en prompt
+function mostrarProductos() {
+    var listaProductos = "Productos Disponibles:\n";
+    
+    for (var i = 0; i < productos.length; i++) {
+        var producto = productos[i];
+        listaProductos += `${producto.id}: ${producto.nombre} - Precio: $${producto.precio}\n`;
+    }
 
-    switch (operador) {
-        case '+':
-            return num1 + num2;
-        case '-':
-            return num1 - num2;
-        case '*':
-            return num1 * num2;
-        case '/':
-            return num1 / num2;
-        default:
-            return 'Operación inválida';
+    while (true) {
+        var mensaje = prompt(listaProductos + "Ingrese el ID del producto que desea comprar (o escriba 'terminar' para finalizar la compra):");
+        
+        if (mensaje === null || mensaje.toLowerCase() === "terminar") {
+            break; // Salir del bucle si el usuario cancela o escribe 'terminar'
+        }
+
+        var productoElegido = productos.find(function (producto) {
+            return producto.id === mensaje;
+        });
+
+        if (productoElegido) {
+            carrito.push(productoElegido);
+            totalCompra += productoElegido.precio;
+            console.log(`Producto agregado al carrito: ${productoElegido.nombre}`);
+        } else {
+            console.log("El ID del producto no es válido. Por favor, seleccione un ID válido o escriba 'terminar' para finalizar la compra.");
+        }
+    }
+
+    // Mostrar los productos seleccionados y el total en la consola
+    console.log("Productos en el Carrito:");
+    if (carrito.length === 0) {
+        console.log("No se han seleccionado productos.");
+    } else {
+        for (var i = 0; i < carrito.length; i++) {
+            console.log(`ID: ${carrito[i].id} - ${carrito[i].nombre}`);
+        }
+        console.log(`Total de la Compra: $${totalCompra.toFixed(2)}`);
     }
 }
 
-// Use un bucle while para permitir múltiples cálculos
-
-while (true) {
-
-    // Solicite al usuario ingresar el primer número (o "salir" para finalizar)
-
-    const num1 = prompt('Ingresa el primer número (o "salir" para finalizar):');
-
-    // Si el usuario ingresa "salir", finalizamos el bucle
-
-    if (num1.toLowerCase() === 'salir') {
-        console.log('Calculadora finalizada.');
-        console.log('gracias por utilizar nuestra calculadora interactiva.');
-        break;
-    }
-
-    // Solicite al usuario ingresar el operador
-
-    const operador = prompt('Ingresa el operador (+, -, *, /):');
-
-    // Solicite al usuario ingresar el segundo número
-
-    const num2 = prompt('Ingresa el segundo número:');
-
-    // Calculamos el resultado utilizando la función calcular
-
-    const result = calcular(num1, operador, num2);
-
-    // Mostramos el resultado en la consola
-
-    console.log(`Resultado: ${result}`);
-}
-
-
+// Llamamos a la función para mostrar productos
+mostrarProductos();
