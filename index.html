@@ -1,12 +1,119 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ar">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda en Línea</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Tienda de Relojes</title>
 </head>
+
 <body>
+    <header>
+        <h1>Tienda de Relojes ferrari</h1>
+    </header>
+
+
+
+    <section class="contenedor">
+        <!-- Contenedor de elementos -->
+        <div class="contenedor-items">
+            <div class="item">
+                <span class="titulo-item">pilota red</span>
+                <img src="./multimedia/Ferrari-forza-blue-3.png" alt="" class="img-item">
+                <span class="precio-item">$135.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">pilota blue</span>
+                <img src="./multimedia/Ferrari-pilota-1.png" alt="" class="img-item">
+                <span class="precio-item">$155.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">forza</span>
+                <img src="./multimedia/Ferrari-forza-2.png" alt="" class="img-item">
+                <span class="precio-item">$135.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">scuderia</span>
+                <img src="./multimedia/Ferrari-scuderia-4.png" alt="" class="img-item">
+                <span class="precio-item">$158.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">scuderia black</span>
+                <img src="./multimedia/ferrari-scuderia-totalblack-5.jpg" alt="" class="img-item">
+                <span class="precio-item">$132.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">scuderia yellow</span>
+                <img src="./multimedia/Ferrari-scuderia-yellow-6.jpg" alt="" class="img-item">
+                <span class="precio-item">$138.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">f sport</span>
+                <img src="./multimedia/ferrari-sport-7.webp" alt="" class="img-item">
+                <span class="precio-item">$154.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">ultraleggero</span>
+                <img src="./multimedia/ferrari-ultra-10.jpg" alt="" class="img-item">
+                <span class="precio-item">$142.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <!-- <div class="item">
+                <span class="titulo-item">ultra</span>
+                <img src="./multimedia/ferrari-ultra-9.jpg" alt="" class="img-item">
+                <span class="precio-item">$142.800</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div> -->
+        </div>
+        <!-- Carrito de Compras -->
+        <div class="carrito" id="carrito">
+            <div class="header-carrito">
+                <h2>Tu Carrito</h2>
+            </div>
+
+            <div class="carrito-items">
+
+            </div>
+            <div class="carrito-total">
+                <div class="fila">
+                    <strong>Tu Total</strong>
+                    <span class="carrito-precio-total">
+                        $120.000,00
+                    </span>
+                </div>
+                <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+            </div>
+        </div>
+    </section>
+
+    
+
+        <form class="formulario" action="#" method="get" enctype="text/plain">
+        
+            <input type="text" placeholder="nombre y apellido" name="nombre y apellido" />
+
+            <input type="email" placeholder="ferrari_relojes@hotmail.com" name="correo_electronico" />
+
+            <input type="date" placeholder="fecha nacimiento" name="fecha de nacimiento" />
+
+            <input type="submit" value="enviar" />
+        </form>
     
     <script src="./js/index.js"></script>
+    <script src="./js/formulario.js"></script>
+
 </body>
+
 </html>
