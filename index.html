@@ -9,6 +9,8 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="https://icon2.cleanpng.com/20171220/tqe/ferrari-logo-png-image-5a3abf386f33d6.0122773515137994804555.jpg" type="image/x-icon">
+ 
     <title>Tienda de Relojes</title>
 </head>
 
@@ -70,12 +72,7 @@
                 <span class="precio-item">$142.000</span>
                 <button class="boton-item">Agregar al Carrito</button>
             </div>
-            <!-- <div class="item">
-                <span class="titulo-item">ultra</span>
-                <img src="./multimedia/ferrari-ultra-9.jpg" alt="" class="img-item">
-                <span class="precio-item">$142.800</span>
-                <button class="boton-item">Agregar al Carrito</button>
-            </div> -->
+           
         </div>
         <!-- Carrito de Compras -->
         <div class="carrito" id="carrito">
@@ -96,6 +93,8 @@
                 <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
             </div>
         </div>
+
+      
     </section>
 
     
@@ -113,7 +112,13 @@
     
     <script src="./js/index.js"></script>
     <script src="./js/formulario.js"></script>
-
+   <script>
+    let url = "https://jsonplaceholder.typicode.com/albums"
+    fetch (url)
+    .then(response => response.json ())
+    .then(data => console.log(data))
+    .catch(error => console.log(error))
+   </script>
 </body>
 
 </html>

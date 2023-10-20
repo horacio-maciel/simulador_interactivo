@@ -1,7 +1,7 @@
 //Variable que mantiene el estado visible del carrito
 var carritoVisible = false;
 
-//Espermos que todos los elementos de la pàgina cargen para ejecutar el script
+//Esperamos que todos los elementos de la pàgina cargen para ejecutar el script
 if(document.readyState == 'loading'){
     document.addEventListener('DOMContentLoaded', ready)
 }else{
@@ -42,13 +42,13 @@ function ready(){
     document.getElementsByClassName('btn-pagar')[0].addEventListener('click',pagarClicked)
 }
 //Eliminamos todos los elementos del carrito y lo ocultamos
-function pagarClicked(){
-    alert("Gracias por la compra");
-    //Elimino todos los elmentos del carrito
-    var carritoItems = document.getElementsByClassName('carrito-items')[0];
+ function pagarClicked(){
+     alert("Gracias por la compra");
+ //Elimino todos los elmentos del carrito
+     var carritoItems = document.getElementsByClassName('carrito-items')[0];
     while (carritoItems.hasChildNodes()){
-        carritoItems.removeChild(carritoItems.firstChild)
-    }
+         carritoItems.removeChild(carritoItems.firstChild)
+     }
     actualizarTotalCarrito();
     ocultarCarrito();
 }
@@ -194,6 +194,6 @@ function actualizarTotalCarrito(){
 
     document.getElementsByClassName('carrito-precio-total')[0].innerText = '$'+total.toLocaleString("es") + ",00";
 
-}
 
+}
 
